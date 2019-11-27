@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 
 (app);
 
-app.post('/', function (req, res) {
+app.post('/matches', function (req, res) {
     console.log('post')
     let message = '';
     if(req.body.nlp.entities.wrestler){
@@ -29,9 +29,9 @@ app.post('/', function (req, res) {
 });
 
 
-const port = 5000;
-app.listen(process.env.PORT || port , function () {
-    console.log(`App is listening on port ${process.env.PORT || port}`);
+const PORT = process.env.PORT || 5000;
+app.listen(PORT , function () {
+    console.log(`App is listening on port ${PORT}`);
 });
 
 function parse(match){
