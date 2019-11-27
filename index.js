@@ -30,7 +30,7 @@ app.post('/', function (req, res) {
 
 const port = 5000;
 app.listen(process.env.PORT || 5000 , function () {
-    console.log(`App is listening on port ${port}`);
+    console.log(`App is listening on port ${process.env.PORT || port}`);
 });
 
 function parse(match){
