@@ -1,6 +1,6 @@
 {
   "name": "purobot-connector",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "API for cai connector",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "axios": "^0.19.0",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "purobot-datasource": "1.0.6",
+    "purobot-datasource": "1.0.7",
     "sapcai": "^4.1.0"
   }
 }
