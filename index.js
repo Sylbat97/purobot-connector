@@ -8,6 +8,7 @@ app.use(bodyParser.json());
 (app);
 
 app.post('/', function (req, res) {
+    console.log('post')
     let message = '';
     if(req.body.nlp.entities.wrestler){
         //For the moment we are just taking one wrestler in param
