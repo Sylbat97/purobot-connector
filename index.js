@@ -10,12 +10,13 @@ app.use(bodyParser.json());
 
 app.post('/matches', function (req, res) {
     console.log('post')
-    let message = '';
-    if(req.body.nlp.entities.wrestler){
+    str = JSON.stringify(req.body, null, 4); // (Optional) beautiful indented output.
+    console.log(str); let message = '';
+    if (req.body.nlp.entities.wrestler) {
         //For the moment we are just taking one wrestler in param
         let match = datasource.getMatchByWrestler(req.body.nlp.entities.wrestler[0].value);
         message = parse(match);
-    }else{
+    } else {
         let match = datasource.getRandomMatch();
         message = parse(match);
     }
@@ -31,17 +32,17 @@ app.post('/matches', function (req, res) {
 
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT , function () {
+app.listen(PORT, function () {
     console.log(`App is listening on port ${PORT}`);
 });
 
-function parse(match){
+function parse(match) {
     let message = `Here is a match for you !\n${match.match}\n${match.date}\n`;
-    if(match.other_data){
-        message+= `${match.other_data}\n`;
+    if (match.other_data) {
+        message += `${match.other_data}\n`;
     }
     message += `\n${match.link_jp}\n`;
-    if(match.link_en){
+    if (match.link_en) {
         message += `Available in english: ${match.link_en}`
     }
     return message;
