@@ -1,9 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-//const datasource = require('purobot-datasource');
+const datasource = require('purobot-datasource');
 const en = require('./texts/en.json')
 const fr = require('./texts/fr.json')
-const datasource = require('../purobot-datasource/index.js')
+//const datasource = require('../purobot-datasource/index.js')
 
 const app = express();
 app.use(bodyParser.json());
